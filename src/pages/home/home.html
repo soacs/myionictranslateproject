@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Translate Demo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  Lets translate some strings in this page.
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    We display the name, email and username here. But there are many translated strings in assets/i18 directory.
   </p>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Language</ion-label>
+      <ion-select [(ngModel)]="lang" (ionChange)="switchLanguage()">
+        <ion-option value="en">English</ion-option>
+        <ion-option value="es">Spanish</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <h2>{{ 'NAME' | translate }}</h2>
+    </ion-item>
+    <ion-item>
+      <h2>{{ 'EMAIL' | translate }}</h2>
+    </ion-item>
+    <ion-item>
+      <h2>{{ 'USERNAME' | translate }}</h2>
+    </ion-item>
+  </ion-list>
 </ion-content>
